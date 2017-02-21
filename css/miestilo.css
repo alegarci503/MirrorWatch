@@ -34,3 +34,20 @@ img.correcto{
   -webkit-font-feature-settings: 'liga';  
   -webkit-font-smoothing: antialiased;
 }
+
+.po{
+  background: url(../img/fondo.jpg);
+  background-size: cover;
+  margin: 120px;
+
+}
+
+   header, main, footer {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
