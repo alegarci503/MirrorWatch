@@ -10,6 +10,12 @@ img.grande{
 img.correcto{
   width: 650px; height: 170px;
 }
+img.user{
+  width: 150px; height: 120px;
+}
+.logo{
+  width: 210px; height: 170px;
+}
 
 @font-face {
   font-family: 'Material Icons';
