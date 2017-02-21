@@ -150,29 +150,14 @@
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">COSMOGRAPH<i class="material-icons right">more_vert</i></span>
       <p><a href="#">Comprar<i class="material-icons left">shopping_cart</i></a></p>
-    </div>
+     </div>
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><Especificaciones></Especificaciones><i class="material-icons right">close</i></span>
-      <div class="divider"></div>
-  <div class="section">
-    <h5>Pantalla</h5>
-    <p>LCD de 1,6 pulgadas con resolucion de 320 x 320 píxeles</p>
-  </div>
-  <div class="divider"></div>
-  <div class="section">
-    <h5>Procesador</h5>
-    <p>Qualcomm Snapdragon 400 a 1,2 GHz</p>
-  </div>
-  <div class="divider"></div>
-  <div class="section">
-    <h5>Almacenamiento</h5>
-    <p>4GB internos y 512MB de RAM</p>
-  </div>
-  <div class="divider"></div>
-  <div class="section">
-    <h5>Bateria</h5>
-    <p>	420 mAh</p>
-  </div>
+      <span class="card-title grey-text text-darken-4">COSMOGRAPH<i class="material-icons right">close</i></span>
+      <p>Presentado en 1963, el Rolex Cosmograph Daytona nació como respuesta a las necesidades
+de los pilotos de alta competición. Gracias a su cronógrafo de gran fiabilidad y a su bisel
+con escala taquimétrica, permite al piloto medir perfectamente la velocidad media hasta 400
+kilómetros o millas por hora, según su preferencia. Un icono unido al mundo del automovilismo
+de alto rendimiento por su nombre y función.</p>
     </div>
   </div>
   </div>
@@ -184,29 +169,10 @@
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">PEARLMASTER 39<i class="material-icons right">more_vert</i></span>
       <p><a href="#">Comprar<i class="material-icons left">shopping_cart</i></a></p>
-    </div>
+     </div>
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><Especificaciones></Especificaciones><i class="material-icons right">close</i></span>
-      <div class="divider"></div>
-  <div class="section">
-    <h5>Pantalla</h5>
-    <p>LCD de 1,6 pulgadas con resolucion de 320 x 320 píxeles</p>
-  </div>
-  <div class="divider"></div>
-  <div class="section">
-    <h5>Procesador</h5>
-    <p>Qualcomm Snapdragon 400 a 1,2 GHz</p>
-  </div>
-  <div class="divider"></div>
-  <div class="section">
-    <h5>Almacenamiento</h5>
-    <p>4GB internos y 512MB de RAM</p>
-  </div>
-  <div class="divider"></div>
-  <div class="section">
-    <h5>Bateria</h5>
-    <p>	420 mAh</p>
-  </div>
+      <span class="card-title grey-text text-darken-4">PEARLMASTER 39<i class="material-icons right">close</i></span>
+      <p>El Rolex Pearlmaster es el reloj de alta joyería más ilustre de Rolex. Diseñado con las líneas suaves y curvas del Pearlmaster, se caracteriza por sus exquisitas esferas adornadas con engastes de diamantes, zafiros o rubíes. Disponible exclusivamente en oro amarillo, oro blanco u oro Everose de 18 quilates, creado por Rolex en su propia fundición.</p>
     </div>
   </div>
   </div>
@@ -218,48 +184,31 @@
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">EXPLORER II<i class="material-icons right">more_vert</i></span>
       <p><a href="#">Comprar<i class="material-icons left">shopping_cart</i></a></p>
-    </div>
+     </div>
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><Especificaciones></Especificaciones><i class="material-icons right">close</i></span>
-      <div class="divider"></div>
-  <div class="section">
-    <h5>Pantalla</h5>
-    <p>LCD de 1,6 pulgadas con resolucion de 320 x 320 píxeles</p>
-  </div>
-  <div class="divider"></div>
-  <div class="section">
-    <h5>Procesador</h5>
-    <p>Qualcomm Snapdragon 400 a 1,2 GHz</p>
-  </div>
-  <div class="divider"></div>
-  <div class="section">
-    <h5>Almacenamiento</h5>
-    <p>4GB internos y 512MB de RAM</p>
-  </div>
-  <div class="divider"></div>
-  <div class="section">
-    <h5>Bateria</h5>
-    <p>	420 mAh</p>
-  </div>
+      <span class="card-title grey-text text-darken-4">EXPLORER II<i class="material-icons right">close</i></span>
+      <p>El Rolex Explorer II se presentó por primera vez en 1971 como el heredero natural
+del Rolex Explorer original, pero con un carácter propio. El Explorer II, una herramienta
+robusta y altamente refinada, se convirtió rápidamente en el reloj de elección
+de espeleólogos, vulcanólogos y exploradores polares o de las selvas gracias a sus características específicas.</p>
     </div>
   </div>
   </div>  
   </div>
  </div>
-    <footer class="page-footer  grey darken-2">
+     <footer class="page-footer  grey darken-2">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">Contactanos</h5>
+                <p class="grey-text text-lighten-4">Quieres hablar directamente con nostros, lo puedes hacer atravez de nuestras redes sociales</p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="white-text">Redes Sociales</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!"><img src = "img/fb.png"><br>Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!"><img src = "img/tw.png"><br>Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!"><img src = "img/insta.png"><br>Instagram</a></li>
                 </ul>
               </div>
             </div>
@@ -267,7 +216,7 @@
           <div class="footer-copyright grey darken-4">
             <div class="container">
             Todos los derechos reservados © 2014 Copyright MirrorWatch
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <a class="grey-text text-lighten-4 right" href="#!">Servicios</a>
             </div>
           </div>
         </footer>
