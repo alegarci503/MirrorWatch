@@ -10,24 +10,17 @@
       <link type="text/css" rel="stylesheet" href="css/miestilo.css"  media="screen,projection"/>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper grey lighten-4">
-        <a href="#!" class="brand-logo"><img class="pequeña" src="img/Original.png"></a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="index.php" class="black-text ">Inicio<i class="material-icons left">home</i></a></li>
-            <li><a href="index.php" class="black-text ">Login<i class="material-icons left">person</i></a></li>
-            <li><a href="productos.php" class="black-text ">Productos<i class="material-icons left">watch</i></i></a></li>
-            <li><a href="soporte.php" class="black-text ">Cuenta<i class="material-icons left">portrait</i></a></li>
-            <li><a href="nosotros.php" class="black-text ">Nosotros<i class="material-icons left">business</i></a></li>
-            <li><a href="carrito.php" class="black-text "><i class="material-icons">local_grocery_store</i></a></li>
-            <li><a href="soporte.php" class="black-text "><i class="material-icons">build</i></a></li>
-        </ul>
-        </div>
-    </nav>
-    </div>
+    </head>   
+
     <body style="background-color:#e0e0e0;">
+
+      <?php
+
+      include("inc/Menu.php");
+
+      ?>
+
+
     <div class="parallax-container">
       <div class="parallax"><img class="mediana" src="img/parallax.jpg"></div>
     </div>
@@ -196,30 +189,13 @@ de espeleólogos, vulcanólogos y exploradores polares o de las selvas gracias a
   </div>  
   </div>
  </div>
-     <footer class="page-footer  grey darken-2">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Contactanos</h5>
-                <p class="grey-text text-lighten-4">Quieres hablar directamente con nostros, lo puedes hacer atravez de nuestras redes sociales</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Redes Sociales</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!"><img src = "img/fb.png"><br>Facebook</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!"><img src = "img/tw.png"><br>Twitter</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!"><img src = "img/insta.png"><br>Instagram</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright grey darken-4">
-            <div class="container">
-            Todos los derechos reservados © 2014 Copyright MirrorWatch
-            <a class="grey-text text-lighten-4 right" href="#!">Servicios</a>
-            </div>
-          </div>
-        </footer>
+     
+      <?php
+
+      include("inc/Footer.php");
+
+      ?>
+
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
