@@ -120,9 +120,7 @@
       </header>
         
 
-      <?php 
-      include("inc/Footer.php");
-      ?>
+      
 
     </body>
           <!--Import jQuery before materialize.js-->
