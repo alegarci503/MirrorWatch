@@ -6,14 +6,21 @@ $(document).ready(function(){
     
         $('ul.tabs').tabs();
 
+         $('.slider').slider();
+
+           $('.carousel.carousel-slider').carousel({fullWidth: true});
+
+             $(".button-collapse").sideNav();
+              $('.modal').modal();
+             
     });
 
-    $('.carousel.carousel-slider').carousel({fullWidth: true});
+  
 
-    $(document).ready(function(){
-      $('.slider').slider();
+   
+     
+ 
 
-    });
 
 
     

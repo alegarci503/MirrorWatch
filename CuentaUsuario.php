@@ -2,7 +2,7 @@
   <html lang="ES">
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Login</title>
+    <title>Cuenta</title>
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -14,113 +14,131 @@
     
     <body>
 
+      <!--Se inclye el Nav-->
+      <?php
+      include("inc/Menu.php");
+      ?>
 
-    
-        <div class="col s12 m6">
-        <ul id="slide-out" class="side-nav fixed">
-            <li><div class="userView">
-            <div class="background">
-                <img src="img/pres.jpg">
-            </div>
-            <a href="#!user"><img class="circle" src="img/moto2.jpg"></a>
-            <a href="#!name"><span class="white-text name">Byron Solorzano</span></a>
-            <a href="#!email"><span class="white-text email">basfuentes12@hotmai.com</span></a>
-            </div></li>
-            <li><a href="#!"><i class="material-icons">cloud</i>Cuenta</a></li>
-            <li><a href="#!">Informacion</a></li>
-            <li><div class="divider"></div></li>
-            <li><a class="subheader">Seguridad</a></li>
-            <li><a class="waves-effect" href="#!">Configuracion de cuenta</a></li>
-        </ul>
-        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-      </div>
+      <!--Empieza la informacion-->
 
 
-      <header>
 
-        <?php
-        include("inc/Menu.php");
-        ?>
-
-      <ul id="tabs-swipe-demo" class="tabs black">
-        <li class="tab col s3"><a class="active" href="#test-swipe-1">Informacion</a></li>
-        <li class="tab col s3"><a href="#test-swipe-2">Configuracion</a></li>
-      </ul>
-      <div id="test-swipe-1" class="col s12 deep-orange accent-2">
+      <div class="cuent">
               
-        <div class="row">
-        <div class="input-field col s12">
-          <input disabled value="Byron Alberto Solorzano Fuentes" id="disabled" type="text" class="validate white-text">
-          <label for="disabled" class="white-text">Nombre Completo</label>
-        </div>
-
-    
-        <div class="input-field col s6">
-          <input disabled value="18 años" id="disabled" type="text" class="validate white-text">
-          <label for="disabled" class="white-text">Edad</label>
-        </div>
-
-   
-        <div class="input-field col s6">
-          <input disabled value="basfuentes12@hotmail.com" id="disabled" type="text" class="validate white-text">
-          <label for="disabled" class="white-text">Correo Electronico</label>
-        </div>
-
-        <div class="input-field col s6">
-          <input disabled value="Activa" id="disabled" type="text" class="validate white-text">
-          <label for="disabled" class="white-text">Cuenta</label>
-        </div>        
+          <ul id="tabs-swipe-demo" class="tabs black center">
+            <li class="tab col s3"><a class="active" href="#test-swipe-1">Datos del Usuario</a></li>
+            <li class="tab col s3"><a href="#test-swipe-2">Configuracion</a></li>
         
-      </div>
+          </ul>
+          <div id="test-swipe-1" class="col s12 red darken-1">
+          
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
 
-      </div>
-      </div>
-
-      <div id="test-swipe-2" class="col s12  deep-orange accent-1">
-
-      <div class="row">
-                    <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate white-text">
-                        <label for="first_name" class=" white-text">Nombres</label>
-                        </div>
-                        <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate white-text">
-                        <label for="last_name" class=" white-text">Apellidos</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                        <input id="password" type="password" class="validate white-text">
-                        <label for="password" class=" white-text">Contraseña</label>
-                        </div>
-
-                         <div class="input-field col s6">
-                        <input id="password" type="password" class="validate white-text">
-                        <label for="password" class=" white-text">Repetir Contraseña</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                        <input id="email" type="email" class="validate white-text">
-                        <label for="email" class=" white-text">Email</label>
-                        </div>
-                    </div>
-
-                     <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
-                        <i class="material-icons right">send</i>
-                    </button>
-      
-                    </form>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input disabled value="Byron Alberto Solorzano Fuentes" id="disabled" type="text" class="validate white-text">
+                  <label for="icon_prefix" class="white-text">Nombre Completo</label>
                 </div>
 
-      </div>
-            
-      </header>
-        
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">phone</i>
+                  <input disabled value="71591631" id="disabled" type="text" class="validate white-text">
+                  <label for="icon_telephone" class="white-text">Telefono</label>
+                </div>
 
-      
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">perm_identity</i>
+                  <input disabled value="18 años" id="disabled" type="text" class="validate white-text">
+                  <label for="icon_telephone" class="white-text">Edad</label>
+                </div>
+                
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">supervisor_account</i>
+                  <input disabled value="basfuentes25@hotmail.com" id="disabled" type="text" class="validate white-text">
+                  <label for="icon_telephone" class="white-text">Correo Electronico</label>
+                </div>
+
+              </div>
+            </form>
+          </div>
+                
+          
+          </div>
+          <div id="test-swipe-2" class="col s12 red">
+          
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input placeholder="Byron Alberto Solorzano Fuentes" id="icon_prefix" type="text" class="validate">
+                  <label for="icon_prefix">Nombre Completo</label>
+                </div>
+
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">phone</i>
+                  <input placeholder="71591631" id="icon_telephone" type="tel" class="validate">
+                  <label for="icon_telephone">Telefono</label>
+                </div>
+
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">perm_identity</i>
+                  <input placeholder="18 años" id="icon_telephone" type="tel" class="validate">
+                  <label for="icon_telephone">Edad</label>
+                </div>
+                
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">supervisor_account</i>
+                  <input placeholder="basfuentes25@gmail.com" id="icon_telephone" type="tel" class="validate">
+                  <label for="icon_telephone">Correo Electronico</label>
+                </div>
+
+                 <div class="input-field col s6">
+                  <i class="material-icons prefix">vpn_key</i>
+                  <input placeholder="Contraseña" id="password" type="password"  class="validate">
+                  <label for="password">Contraseña</label>
+                </div>
+
+                 <div class="input-field col s6">
+                  <i class="material-icons prefix">vpn_key</i>
+                  <input placeholder="Repetir Contraseña" id="password" type="password"  class="validate">
+                  <label for="password">Contraseña</label>
+                </div>
+
+                  
+              <button class="btn waves-effect waves-light" type="submit" name="action">Guardar Cambios
+                  <i class="material-icons right">send</i>
+             </button>
+             
+              </div>
+
+
+            </form>
+
+             
+          </div>
+
+
+          </div>
+          
+      </div>    
+  
+
+
+
+
+
+
+
+
+      <!--Se agrega el Footer-->
+
+      <?php
+      include("inc/Footer.php");
+      ?>
 
     </body>
           <!--Import jQuery before materialize.js-->

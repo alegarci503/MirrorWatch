@@ -57,8 +57,8 @@
                         <input id="last_name" type="text" class="validate white-text">
                         <label for="last_name" class=" white-text">Apellidos</label>
                         </div>
-                    </div>
-                    <div class="row">
+                    
+                  
                         <div class="input-field col s6">
                         <input id="password" type="password" class="validate white-text">
                         <label for="password" class=" white-text">Contraseña</label>
@@ -68,13 +68,20 @@
                         <input id="password" type="password" class="validate white-text">
                         <label for="password" class=" white-text">Repetir Contraseña</label>
                         </div>
-                    </div>
-                    <div class="row">
+                   
+                  
                         <div class="input-field col s6">
                         <input id="email" type="email" class="validate white-text">
                         <label for="email" class=" white-text">Email</label>
                         </div>
+                   
+
+                    
+                    <div class="input-field col s6">
+                        <input id="icon_telephone" type="tel" class="validate white-text">
+                        <label for="icon_telephone" class="white-text">Telefono</label>
                     </div>
+                   </div>
 
                      <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
                         <i class="material-icons right">send</i>

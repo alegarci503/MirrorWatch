@@ -36,7 +36,7 @@ img.user{
   display: inline-block;
   word-wrap: normal;
 
-  font-feature-settings: 'liga'; // !!! make sure this is set !!!
+  font-feature-settings: 'liga'; 
   -webkit-font-feature-settings: 'liga';  
   -webkit-font-smoothing: antialiased;
 }
@@ -44,16 +44,59 @@ img.user{
 .po{
   background: url(../img/fondo.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   margin: 120px;
 
 }
 
-   header, main, footer {
-      padding-left: 300px;
-    }
+ @media only screen and (max-width : 992px){
+        .po{
+         
+          margin: 0;
+        }
+ }
 
-    @media only screen and (max-width : 992px) {
-      header, main, footer {
-        padding-left: 0;
-      }
-    }
+.cuent{
+  margin: 50px;
+  border-radius: 8px; 
+  border-top-color: black;
+  
+  
+}
+
+ @media only screen and (max-width : 992px){
+        .cuent{
+          margin: 0;
+        }
+ }
+
+.nav-wrapper{
+  background-color: transparent;
+}
+
+.o{
+  width: 90px;
+  height: auto;
+}
+
+.t{
+  position:absolute;
+  width:110px;
+  height:auto;
+  overflow:hidden;
+  left:0px;
+  vertical-align:middle;
+}
+.brain{
+  
+    background: url(../img/bra.jpg);
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    
+    height: 685px;
+}
+
+.title{
+  font-weight: bold;
+}
+
