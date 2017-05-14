@@ -1,0 +1,29 @@
+body {
+    background: #263238;
+}
+
+img.pequeña{
+  width: 170px; height: 65px;
+}
+.user_root{
+    margin: 5% auto;
+}
+.img-user{
+    width: 90px;
+    height: auto;
+}
+.center-elements{
+    text-align: center;
+}
+.informatic-user{
+    background: white;
+    height: 520px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.section-private{
+    margin: 50px 10px;
+    background: white;
+    height: 450px;
+    box-shadow: 5px 5px 10px black;
+}

@@ -1,19 +1,22 @@
 $(document).ready(function(){
       $('.parallax').parallax();
 
-
-        $(".button-collapse").sideNav();
+      $(".button-collapse").sideNav();
     
-        $('ul.tabs').tabs();
+      $('ul.tabs').tabs();
 
-         $('.slider').slider();
+      $('.slider').slider();
+      $('.slider').height("100%");
+      
+      
+      $('.carousel.carousel-slider').carousel({fullWidth: true});
 
-           $('.carousel.carousel-slider').carousel({fullWidth: true});
+      $('.modal').modal();
 
-             $(".button-collapse").sideNav();
-              $('.modal').modal();
              
     });
+
+    
 
   
 

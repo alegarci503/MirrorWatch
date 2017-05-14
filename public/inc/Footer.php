@@ -26,16 +26,16 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Redes Sociales</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!"><img src = "img/fb.png"><br>Facebook</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!"><img src = "img/tw.png"><br>Twitter</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!"><img src = "img/insta.png"><br>Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/MirrorWatch-257123958026524/" target="_blanck"><img src = "img/fb.png"><br>Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/?request_context=signup" target="_blanck"><img src = "img/tw.png"><br>Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/mrr_watch/" target="_blanck"><img src = "img/insta.png"><br>Instagram</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="footer-copyright grey darken-4">
             <div class="container">
-            Todos los derechos reservados © 2014 Copyright MirrorWatch
+            Todos los derechos reservados © 2017 Copyright MirrorWatch
             <a data-activates="slide-out" class="button-collapse grey-text text-lighten-4 right" href="#!">Opciones de Usuario</a>        
             </div>
           </div>

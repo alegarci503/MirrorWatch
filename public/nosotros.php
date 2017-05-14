@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-  <html lang="ES">
-    <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>MirrorWatch</title>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="css/miestilo.css"  media="screen,projection"/>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    
-    <?php
-
-      include("inc/Menu.php");
-
-      ?>
+<html lang="ES">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>MirrorWatch</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../css/miestilo.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
 
     <body style="background-color:#e0e0e0;">
-   <div class="parallax-container">
+    <!-- se llama a la navbar-->
+        <?php
+
+        include("inc/Menu.php");
+
+        ?>
+    <!-- Se agrega una imagen con efecto parallax-->
+    <div class="parallax-container">
       <div class="parallax"><img class="mediana" src="img/mision.jpg"></div>
     </div>
     <div class="container">
     <header><h1>Nosotros</h1></header>
-     <div class="row">
+    <!-- Se crean celdas de los desarrolladores-->
+      <div class="row">
       <div class="col s6">
         <div class = "container">
           <center>
-        <img class="user"src = "img/user.png">
+        <img class="user"src = "img/Walter.jpg">
         <h5>Walter Garcia</h5>
         <p>Ceo y parte de los desarrolladores del sitio<p>
           </center>
@@ -36,15 +38,17 @@
       </div>
       <div class="col s6">
         <div class = "container">
-         <center>
-        <img class="user"src = "img/user.png">
+          <center>
+        <img class="user"src = "img/Byron.jpg">
         <h5>Byron Solorzano</h5>
         <p>Ceo y parte de los desarrolladores de sitio <p>
         </center>
         </div>
       </div>
-     </div>
+      </div>
     </div>
+
+    <!-- Contenido de mision y vison-->
     <div class="container">
           <article>
               <header><h1>Misión y Visión</h1></header>
@@ -66,16 +70,16 @@
   </div>
   </div>
     </article>   
-        
-         <?php
+        <!-- Se llama al Footer-->
+          <?php
 
       include("inc/Footer.php");
 
       ?>
       
       <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script type="text/javascript" src="js/inicia.js"></script>
+      <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="../js/materialize.min.js"></script>
+      <script type="text/javascript" src="../js/inicia.js"></script>
     </body>
   </html>
