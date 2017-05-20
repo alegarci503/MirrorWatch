@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="ES">
-  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>MirrorWatch</title>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="../css/miestilo.css"  media="screen,projection"/>
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
-  
-  <body style="background-color:#e0e0e0;">
-  <!-- Se llama a la navbar-->
-  <?php
+<html lang='es'>
+<head>
+	<meta charset='utf-8'>
+	<title>CoffeeCode</title>
+	<link type='text/css' rel='stylesheet' href='../css/materialize.min.css'/>
+	<link type='text/css' rel='stylesheet' href='../css/icons.css'/>
+	<link type='text/css' rel='stylesheet' href='../css/miestilo.css'/>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+</head>
+<body>
+	<!-- Menú del sitio público -->
+	  <?php
+		include("inc/menu.php");
+	   ?>
+	<!-- Menú lateral para dispositivos móviles -->
+	<ul class='side-nav' id='mobile'>
+		<li><a href='#productos'><i class='material-icons left'>view_module</i>Productos</a></li>
+		<li><a href='#'><i class='material-icons left'>shopping_cart</i>Compras</a></li>
+		<li><a href='#acceder'><i class='material-icons left'>person</i>Acceder</a></li>
+	</ul>
 
-    include("inc/Menu.php");
-
-    ?>
-
+	<!-- Slider con subtítulos e indicadores y con una altura de 400px -->
   <!-- Se crea un Slider-->
 <div class="slider black">
   <ul class="slides">
@@ -112,16 +113,12 @@
     </div>
     </div>
 </div>
-<!-- se llama el footer-->
-        <?php
+	
 
-    include("inc/Footer.php");
 
-    ?>
-    
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="../js/materialize.min.js"></script>
-    <script type="text/javascript" src="../js/inicia.js"></script>
-  </body>
+	<!-- Importación de archivos JavaScript -->
+	<script type='text/javascript' src='../js/jquery-2.1.1.min.js'></script>
+	<script type='text/javascript' src='../js/materialize.min.js'></script>
+	<script type='text/javascript' src='js/public.js'></script>
+</body>
 </html>

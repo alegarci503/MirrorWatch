@@ -15,15 +15,3 @@ $(document).ready(function(){
 
              
     });
-
-    
-
-  
-
-   
-     
- 
-
-
-
-    

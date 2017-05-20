@@ -1,5 +1,0 @@
-# Privilegios para `walter`@`localhost`
-
-GRANT USAGE ON *.* TO 'walter'@'localhost' IDENTIFIED BY PASSWORD '*84AAC12F54AB666ECFC2A83C676908C8BBC381B1';
-
-GRANT ALL PRIVILEGES ON `mirrorwatch`.* TO 'walter'@'localhost' WITH GRANT OPTION;
