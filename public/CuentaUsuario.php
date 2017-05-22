@@ -7,8 +7,11 @@
    
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+    <link type='text/css' rel='stylesheet' href='../css/sweetalert2.min.css'/>
     <link type='text/css' rel='stylesheet' href='../css/icons.css'/>
     <link type="text/css" rel="stylesheet" href="../css/miestilo.css"  media="screen,projection"/>
+
+    <script type='text/javascript' src='../js/sweetalert2.min.js'></script>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -21,9 +24,6 @@
     ?>
 
     <!--Empieza la informacion-->
-
-
-
     <div class="cuent">
             
         <ul id="tabs-swipe-demo" class="tabs black center">
@@ -31,136 +31,191 @@
           <li class="tab col s3"><a href="#test-swipe-2">Configuracion</a></li>
       
         </ul>
-        <div id="test-swipe-1" class="col s12 red darken-1">
-        
-        <div class="row">
         <?php
-        
           require("../lib/database.php");
-          $sql = "SELECT usuario,nombre,apellido,fecha_nacimiento,Telefono,correo FROM clientes_usu,datos_personales WHERE clientes_usu.id_datospersonales1 = datos_personales.id_datospersonales AND id_cliente_usu = 1";
-          $data = Database::getRow($sql,null);
+          require("../lib/validator.php");           
+	        session_start();
+          $sql = "SELECT usuario,nombre,apellido,fecha_nacimiento,Telefono,correo FROM clientes_usu,datos_personales WHERE clientes_usu.id_datospersonales1 = datos_personales.id_datospersonales AND id_cliente_usu = ?";
+          $param = array($_SESSION['id_cliente']);
+          $data = Database::getRow($sql,$param);
 
-          if($data != null)
-          {
-              print("
-                     <form class='col s12'>
-                        <div class='row'>
+          $nombres = $data['nombre'];
+          $apellidos = $data['apellido'];
+          $fecha_nacimiento = $data['fecha_nacimiento'];
+          $telefono = $data['Telefono'];
+          $correo = $data['correo'];
+          $usuario = $data['usuario'];         
 
-                          <div class='input-field col s6'>
-                            <i class='material-icons prefix'>account_circle</i>
-                            <input disabled value='$data[nombre] $data[apellido]' id='disabled' type='text' class='validate white-text'>
-                            <label for='icon_prefix' class='white-text'>Nombre Completo</label>
-                          </div>
-
-                          <div class='input-field col s6'>
-                            <i class='material-icons prefix'>phone</i>
-                            <input disabled value='$data[Telefono]' id='disabled' type='text' class='validate white-text'>
-                            <label for='icon_telephone' class='white-text'>Telefono</label>
-                          </div>
-
-                          <div class='input-field col s6'>
-                            <i class='material-icons prefix'>perm_identity</i>
-                            <input disabled value='$data[fecha_nacimiento]' id='disabled' type='text' class='validate white-text'>
-                            <label for='icon_telephone' class='white-text'>Fecha de Nacimiento</label>
-                          </div>
-                          
-                          <div class='input-field col s6'>
-                            <i class='material-icons prefix'>supervisor_account</i>
-                            <input disabled value='$data[correo]' id='disabled' type='text' class='validate white-text'>
-                            <label for='icon_telephone' class='white-text'>Correo Electronico</label>
-                          </div>
-
-                        </div>
-                      </form>
-              ");
-           
-          }
-        	else
-          {
-         
-            print("<div class='card-panel yellow'><i class='material-icons left'>warning</i>No a iniciado sesion</div>");
-          }
-        ?>
-       
-        </div>
+          if(!empty($_POST))
+            {
               
-        
-        </div>
-        <div id="test-swipe-2" class="col s12 red">
-        
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-            <?php
+              $_POST = Validator::validateForm($_POST);
+              $nombres = $_POST['nombres'];
+              $apellidos = $_POST['apellidos'];
+              $fecha_nacimiento = $_POST['fecha_nacimiento'];
+              $telefono = $_POST['Telefono'];
+              $correo = $_POST['correo'];
+              $usuario = $_POST['usuario'];
+              $clave1 = $_POST['clave1'];
+              $clave2 = $_POST['clave2']; 
 
-             $sql = "SELECT usuario,nombre,apellido,fecha_nacimiento,Telefono,correo FROM clientes_usu,datos_personales WHERE clientes_usu.id_datospersonales1 = datos_personales.id_datospersonales AND id_cliente_usu = 1";
-             $data = Database::getRow($sql,null);
-
-              if($data != null)
+              try
               {
-                  print("
-                   <div class='input-field col s6'>
-                      <i class='material-icons prefix'>account_circle</i>
-                      <input placeholder='Byron Alberto Solorzano Fuentes' id='icon_prefix' type='text' class='validate'>
-                      <label for='icon_prefix'>Nombre Completo</label>
-                    </div>
+                if($nombres != "" && $apellidos != "")
+                {
+                  if($fecha_nacimiento != "")
+                  {
+                    if($telefono != "")
+                    {
+                      if($correo != "")
+                      {
+                        if($usuario != "")
+                        {
+                          if($clave1 == "" && $clave2 == "")
+                          {
+                            //codigo de update sin clave
+                            $sql2 = "UPDATE clientes_usu SET usuario = ? WHERE id_cliente_usu = ?";
+                            $param2 = array($usuario,$_SESSION['id_cliente']);
+                            Database::executeRow($sql2, $param2);
 
-                    <div class='input-field col s6'>
-                      <i class='material-icons prefix'>phone</i>
-                      <input placeholder='71591631' id='icon_telephone' type='tel' class='validate'>
-                      <label for='icon_telephone'>Telefono</label>
-                    </div>
+                            $id_datos = "SELECT id_datospersonales1 FROM clientes_usu WHERE id_cliente_usu = ?";
+                            $paramID = array($_SESSION['id_cliente']);
+                            $Dato = Database::getRow($id_datos, $paramID);
+                            $ID = array_pop($Dato);
 
-                    <div class='input-field col s6'>
-                      <i class='material-icons prefix'>perm_identity</i>
-                      <input placeholder='18 años' id='icon_telephone' type='tel' class='validate'>
-                      <label for='icon_telephone'>Edad</label>
-                    </div>
-                    
-                    <div class='input-field col s6'>
-                      <i class='material-icons prefix'>supervisor_account</i>
-                      <input placeholder='basfuentes25@gmail.com' id='icon_telephone' type='tel' class='validate'>
-                      <label for='icon_telephone'>Correo Electronico</label>
-                    </div>
+                            $sql1 = "UPDATE datos_personales SET nombre = ?, apellido = ?, fecha_nacimiento = ?, Telefono = ?, correo = ? WHERE id_datospersonales = ?";
+                            $param1 = array($nombres, $apellidos, $fecha_nacimiento, $telefono, $correo, $ID);
+                            Database::executeRow($sql1, $param1);
 
-                      <div class='input-field col s6'>
-                      <i class='material-icons prefix'>vpn_key</i>
-                      <input placeholder='Contraseña' id='password' type='password'  class='validate'>
-                      <label for='password'>Contraseña</label>
-                    </div>
-
-                      <div class='input-field col s6'>
-                      <i class='material-icons prefix'>vpn_key</i>
-                      <input placeholder='Repetir Contraseña' id='password' type='password'  class='validate'>
-                      <label for='password'>Contraseña</label>
-                    </div>
-
-                      
-                  <button class='btn waves-effect waves-light' type='submit' name='action'>Guardar Cambios
-                      <i class='material-icons right'>send</i>
-                  </button>
-                ");
-              }
+                            Validator::showMessage(1, "Operacion Exitosa", null);
+                          }
+                          else if($clave1 != "" && $clave2 != "")
+                          {
+                            if($clave1 == $clave2)
+                            {
+                              //codigo de update
+                              Validator::showMessage(1, "Operacion Exitosa", null);
+                            }
+                            else
+                            {
+                              throw new Exception("Las claves no coinciden");
+                            }
+                          }
+                        }
+                        else
+                        {
+                          throw new Exception("Debe digitar el usuario");
+                        }
+                      }
+                      else
+                      {
+                        throw new Exception("Debe digitar el correo");
+                      }
+                    }
+                    else
+                    {
+                      throw new Exception("Debe digitar el telefono");
+                    }
+                  }
+                  else
+                  {
+                    throw new Exception("Debe digitar la fecha de nacimiento");
+                  }
+                }
                 else
-              {
-            
-                print("<div class='card-panel yellow'><i class='material-icons left'>warning</i>No a iniciado sesion</div>");
+                {
+                  throw new Exception("Debe digitar el nombres y apellidos");
+                }
               }
-            ?>
-             
-            
+              catch(Exception $e)
+              {
+                Validator::showMessage(2, $e->getMessage(), null);
+              }
+
+            }
+          
+        ?>   
+         <form class='col s12 red darken-1' id="test-swipe-1" method='get'>
+            <div class='row'>
+
+              <div class='input-field col s6'>
+                <i class='material-icons prefix'>account_circle</i>
+                <input disabled value='<?php print($nombres ." ". $apellidos); ?>' id='disabled' type='text' class='validate white-text'>
+                <label for='icon_prefix' class='white-text'>Nombre Completo</label>
+              </div>
+
+              <div class='input-field col s6'>
+                <i class='material-icons prefix'>phone</i>
+                <input disabled value='<?php print($telefono); ?>' id='disabled' type='text' class='validate white-text'>
+                <label for='icon_telephone' class='white-text'>Telefono</label>
+              </div>
+
+              <div class='input-field col s6'>
+                <i class='material-icons prefix'>perm_identity</i>
+                <input disabled value='<?php print($fecha_nacimiento); ?>' id='disabled' type='text' class='validate white-text'>
+                <label for='icon_telephone' class='white-text'>Fecha de Nacimiento</label>
+              </div>
+              
+              <div class='input-field col s6'>
+                <i class='material-icons prefix'>supervisor_account</i>
+                <input disabled value='<?php print($correo); ?>' id='disabled' type='text' class='validate white-text'>
+                <label for='icon_telephone' class='white-text'>Correo Electronico</label>
+              </div>
+
             </div>
           </form>
 
-            
-        </div>
-
-
-        </div>
-        
+        <form method='post' id="test-swipe-2">
+                  <div class='row'>
+                    <div class='input-field col s12 m6'>
+                      <i class='material-icons prefix'>person</i>
+                      <input id='nombres' type='text' name='nombres' class='validate' value='<?php print($nombres); ?>' required/>
+                      <label for='nombres'>Nombres</label>
+                    </div>
+                    <div class='input-field col s12 m6'>
+                      <i class='material-icons prefix'>person</i>
+                      <input id='apellidos' type='text' name='apellidos' class='validate' value='<?php print($apellidos); ?>' required/>
+                      <label for='apellidos'>Apellidos</label>
+                    </div>
+                    <div class='input-field col s12 m6'>
+                      <i class='material-icons prefix'>redeem</i>
+                      <input id='fecha_nacimiento' type='date' name='fecha_nacimiento' class='validate' value='<?php print($fecha_nacimiento); ?>' required/>
+                      <label for='fecha_nacimiento' class='active'>Fecha de Nacimiento</label>
+                    </div>
+                    <div class='input-field col s12 m6'>
+                      <i class='material-icons prefix'>call</i>
+                      <input id='Telefono' type='number' name='Telefono' class='validate' value='<?php print($telefono); ?>' required/>
+                      <label for='Telefono'>Telefono</label>
+                    </div>
+                    <div class='input-field col s12 m6'>
+                      <i class='material-icons prefix'>email</i>
+                      <input id='correo' type='email' name='correo' class='validate' value='<?php print($correo); ?>' required/>
+                      <label for='correo'>Correo</label>
+                    </div>
+                    <div class='input-field col s12 m6'>
+                      <i class='material-icons prefix'>person_pin</i>
+                      <input id='usuario' type='text' name='usuario' class='validate' value='<?php print($usuario); ?>' required/>
+                      <label for='usuario'>Usuario</label>
+                    </div>
+                    <div class='input-field col s12 m6'>
+                      <i class='material-icons prefix'>security</i>
+                      <input id='clave1' type='password' name='clave1' class='validate'/>
+                      <label for='clave1'>Contraseña</label>
+                    </div>
+                    <div class='input-field col s12 m6'>
+                      <i class='material-icons prefix'>security</i>
+                      <input id='clave2' type='password' name='clave2' class='validate'/>
+                      <label for='clave2'>Confirmar contraseña</label>
+                    </div>
+                  </div>
+                <div class='row center-align'>
+                  <button type='submit' class='btn waves-effect'><i class='material-icons'>send</i></button>
+                </div>
+              </div>
+            </form>     
     </div>    
 
-
+     
 
 
 
@@ -181,3 +236,4 @@
     <script type="text/javascript" src="js/public.js"></script>
   </body>
 </html>
+

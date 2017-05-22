@@ -2,7 +2,7 @@
 <html lang="ES">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>MirrorWatch</title>
+  <title>Productos</title>
     <!--Import Google Icon Font-->
   
     <!--Import materialize.css-->
@@ -30,11 +30,19 @@
         <div class="row">
           <?php
           require("../lib/database.php");
+          try
+          {
           //Se hace la consulta para obtener los productos
-          $sql = "SELECT * FROM productos,marca_producto,tipo_producto WHERE productos.id_marca_producto1 = marca_producto.id_marca_producto AND productos.id_tipo_producto1 = tipo_producto.id_tipo_producto AND productos.id_tipo_producto1 = 0"; //
+        
+          $analogo = "SELECT id_tipo_producto FROM tipo_producto WHERE nombre_tipo = 'Analogo'";
+          $datoID = Database::getRow($analogo, null);
+          $dato = array_pop($datoID);
+
+          $sql = "SELECT * FROM productos,marca_producto,tipo_producto WHERE productos.id_marca_producto1 = marca_producto.id_marca_producto AND productos.id_tipo_producto1 = tipo_producto.id_tipo_producto AND productos.id_tipo_producto1 = $dato AND productos.estado_producto = 1"; //
           //llamo al metodo y le paso los parametros
           $data = Database::getRows($sql, null);
-
+    
+         
           if($data != null)
           {
             foreach ($data as $row)
@@ -70,6 +78,11 @@
           {
             print("<div class='card-panel yellow'><i class='material-icons left'>warning</i>No hay registros disponibles en este momento.</div>");
           }
+          }
+          catch (Exception $error)
+          {
+              print("<div class='card-panel yellow'><i class='material-icons left'>warning</i>No hay registros disponibles en este momento.</div>");
+          }
           ?>
   
     </div>
@@ -84,10 +97,18 @@
     <div class="container">
           <div class="row">
           <?php
+          try
+          {
           //Se hace la consulta para obtener los productos
-          $sql1 = "SELECT * FROM productos,marca_producto,tipo_producto WHERE productos.id_marca_producto1 = marca_producto.id_marca_producto AND productos.id_tipo_producto1 = tipo_producto.id_tipo_producto AND productos.id_tipo_producto1 = 1"; //AND tipo_producto = 1
+          $digital = "SELECT id_tipo_producto FROM tipo_producto WHERE nombre_tipo = 'Digital'";
+          $datoID = Database::getRow($digital, null);
+          $dato = array_pop($datoID);
+
+          $sql1 = "SELECT * FROM productos,marca_producto,tipo_producto WHERE productos.id_marca_producto1 = marca_producto.id_marca_producto AND productos.id_tipo_producto1 = tipo_producto.id_tipo_producto AND productos.id_tipo_producto1 = $dato AND productos.estado_producto = 1"; //AND tipo_producto = 1
           //llamo al metodo y le paso los parametros
           $data1 = Database::getRows($sql1, null);
+
+         
           if($data1 != null)
           {
             foreach ($data1 as $row1)
@@ -122,6 +143,11 @@
           	else
           {
             print("<div class='card-panel yellow'><i class='material-icons left'>warning</i>No hay registros disponibles en este momento.</div>");
+          }
+          }
+           catch (Exception $error)
+          {
+              print("<div class='card-panel yellow'><i class='material-icons left'>warning</i>No hay registros disponibles en este momento.</div>");
           }
           ?>
           </div>

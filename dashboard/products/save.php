@@ -140,64 +140,65 @@ if(!empty($_POST))
     }
 }
 ?>
-
-<form method='post' enctype='multipart/form-data'>
-    <div class='row'>
-        <div class='input-field col s12 m6'>
-          	<i class='material-icons prefix'>note_add</i>
-          	<input id='nombre' type='text' name='nombre' class='validate' value='<?php print($nombre); ?>' required/>
-          	<label for='nombre'>Nombre</label>
-        </div>
-        <div class='input-field col s12 m6'>
-          	<i class='material-icons prefix'>shopping_cart</i>
-          	<input id='precio' type='number' name='precio' class='validate' max='999.99' min='0.01' step='any' value='<?php print($precio); ?>' required/>
-          	<label for='precio'>Precio ($)</label>
-        </div>
-         <div class='input-field col s12 m6'>
-          	<i class='material-icons prefix'>shopping_cart</i>
-          	<input id='existencia' type='number' name='existencia' class='validate' max='100' min='1' step='any' value='<?php print($existencia); ?>' required/>
-          	<label for='existencia'>Existencia</label>
-        </div>
-        <div class='input-field col s12 m6'>
-            <?php
-            $sql = "SELECT id_marca_producto, nombre_marca FROM marca_producto";
-            Page::setCombo("Marca", "marca", $marca, $sql);
-            ?>
-        </div>
-        <div class='input-field col s12 m6'>
-            <?php
-            $sql = "SELECT id_tipo_producto, nombre_tipo FROM tipo_producto";
-            Page::setCombo("Tipo Producto", "tipo", $tipo, $sql);
-            ?>
-        </div>
-        <div class='input-field col s12 m6'>
-          	<i class='material-icons prefix'>description</i>
-          	<input id='descripcion' type='text' name='descripcion' class='validate' value='<?php print($descripcion); ?>'/>
-          	<label for='descripcion'>Descripción</label>
-        </div>
-      	<div class='file-field input-field col s12 m6'>
-            <div class='btn waves-effect'>
-                <span><i class='material-icons'>image</i></span>
-                <input type='file' name='imagen' <?php print(($imagen == null)?"required":""); ?>/>
+<div class="section-private">
+    <h5 class="center-elements">Agregar Nuevo Producto</h5>
+    <form method='post' enctype='multipart/form-data'>
+        <div class='row'>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>note_add</i>
+                <input id='nombre' type='text' name='nombre' class='validate' value='<?php print($nombre); ?>' required/>
+                <label for='nombre'>Nombre</label>
             </div>
-            <div class='file-path-wrapper'>
-                <input class='file-path validate' type='text' placeholder='Seleccione una imagen'/>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>shopping_cart</i>
+                <input id='precio' type='number' name='precio' class='validate' max='999.99' min='0.01' step='any' value='<?php print($precio); ?>' required/>
+                <label for='precio'>Precio ($)</label>
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>shopping_cart</i>
+                <input id='existencia' type='number' name='existencia' class='validate' max='100' min='1' step='any' value='<?php print($existencia); ?>' required/>
+                <label for='existencia'>Existencia</label>
+            </div>
+            <div class='input-field col s12 m6'>
+                <?php
+                $sql = "SELECT id_marca_producto, nombre_marca FROM marca_producto";
+                Page::setCombo("Marca", "marca", $marca, $sql);
+                ?>
+            </div>
+            <div class='input-field col s12 m6'>
+                <?php
+                $sql = "SELECT id_tipo_producto, nombre_tipo FROM tipo_producto";
+                Page::setCombo("Tipo Producto", "tipo", $tipo, $sql);
+                ?>
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>description</i>
+                <input id='descripcion' type='text' name='descripcion' class='validate' value='<?php print($descripcion); ?>'/>
+                <label for='descripcion'>Descripción</label>
+            </div>
+            <div class='file-field input-field col s12 m6'>
+                <div class='btn waves-effect'>
+                    <span><i class='material-icons'>image</i></span>
+                    <input type='file' name='imagen' <?php print(($imagen == null)?"required":""); ?>/>
+                </div>
+                <div class='file-path-wrapper'>
+                    <input class='file-path validate' type='text' placeholder='Seleccione una imagen'/>
+                </div>
+            </div>
+            <div class='input-field col s12 m6'>
+                <span>Estado:</span>
+                <input id='activo' type='radio' name='estado' class='with-gap' value='1' <?php print(($estado == 1)?"checked":""); ?>/>
+                <label for='activo'><i class='material-icons left'>visibility</i></label>
+                <input id='inactivo' type='radio' name='estado' class='with-gap' value='0' <?php print(($estado == 0)?"checked":""); ?>/>
+                <label for='inactivo'><i class='material-icons left'>visibility_off</i></label>
             </div>
         </div>
-        <div class='input-field col s12 m6'>
-            <span>Estado:</span>
-            <input id='activo' type='radio' name='estado' class='with-gap' value='1' <?php print(($estado == 1)?"checked":""); ?>/>
-            <label for='activo'><i class='material-icons left'>visibility</i></label>
-            <input id='inactivo' type='radio' name='estado' class='with-gap' value='0' <?php print(($estado == 0)?"checked":""); ?>/>
-            <label for='inactivo'><i class='material-icons left'>visibility_off</i></label>
+        <div class='row center-align'>
+            <a href='index.php' class='btn waves-effect grey'><i class='material-icons'>cancel</i></a>
+            <button type='submit' class='btn waves-effect blue'><i class='material-icons'>save</i></button>
         </div>
-    </div>
-    <div class='row center-align'>
-        <a href='index.php' class='btn waves-effect grey'><i class='material-icons'>cancel</i></a>
-        <button type='submit' class='btn waves-effect blue'><i class='material-icons'>save</i></button>
-    </div>
-</form>
-
+    </form>
+</div>
 <?php
 Page::footer();
 ?>

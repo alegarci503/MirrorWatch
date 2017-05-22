@@ -30,13 +30,16 @@ class Page
 			
 					<nav class='blue-grey darken-3'>
 						<div class='nav-wrapper'>
-							<a href='../main/' class='brand-logo'><img class='pequeña' src='../../public/img/Original.png'></a>
+							<a href='../main/' class='brand-logo'><img class='pequeña' src='../img/log.png'></a>
 							<a href='#' data-activates='mobile' class='button-collapse'><i class='material-icons'>menu</i></a>
 							<ul class='right hide-on-med-and-down'>
 							    <li><a class='dropdown-button' href='#!' data-activates='dropdown1'>Productos<i class='material-icons left'>arrow_drop_down</i></a></li>
 								<li><a class='dropdown-button' href='#!' data-activates='dropdown3'>Categorias<i class='material-icons left'>shop_two</i></a></li>
-								 <li><a class='dropdown-button' href='#!' data-activates='dropdown2'>Usuarios<i class='material-icons left'>group</i></a></li>
+								<li><a class='dropdown-button' href='#!' data-activates='dropdown2'>Usuarios<i class='material-icons left'>group</i></a></li>
+								<li><a href='../comments/index.php'>Comentarios<i class='material-icons left'>business</i></a></li>
+								<li><a href='../sales/index.php' >Ventas<i class='material-icons left'>local_grocery_store</i></a></li>
 								<li><a class='dropdown-button' href='#' data-activates='dropdown'><i class='material-icons left'>account_circle</i>".$_SESSION['usuario']."</a></li>
+								
 							</ul>
 							<ul id='dropdown' class='dropdown-content'>
 								<li><a href='../main/profile.php'><i class='material-icons left'>edit</i>Editar perfil</a></li>
@@ -47,7 +50,7 @@ class Page
 								<li><a href='../products/save.php'>Agregar Productos</a></li>
 							</ul>
 							<ul id='dropdown2' class='dropdown-content'>
-								<li><a href='#!'>Usuarios del Sistema</a></li>
+								<li><a href='../users/index.php'>Usuarios del Sistema</a></li>
 								<li><a href='../save.php'>Tipos de Usuario</a></li>
 							</ul>
 							<ul id='dropdown3' class='dropdown-content'>
@@ -77,7 +80,7 @@ class Page
 				<header class='navbar-fixed'>
 					<nav class='blue-grey darken-3'>
 						<div class='nav-wrapper'>
-							<a href='../main/' class='brand-logo'><i class='material-icons'>dashboard</i></a>
+							<a href='../main/' class='brand-logo'><img class='pequeña' src='../img/log.png'></a>
 						</div>
 					</nav>
 				</header>
@@ -89,10 +92,6 @@ class Page
 				self::showMessage(3, "¡Debe iniciar sesión!", "../main/login.php");
 				self::footer();
 				exit;
-			}
-			else
-			{
-				print("<h3 class='center-align'>".$title."</h3>");
 			}
 		}
 	}

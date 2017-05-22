@@ -92,62 +92,63 @@ else
 
 }
 ?>
-
-<form method='post'>
-    <div class='row'>
-        <div class='input-field col s12 m6'>
-          	<i class='material-icons prefix'>person</i>
-          	<input id='nombres' type='text' name='nombres' class='validate' value='<?php print($nombres); ?>' required/>
-          	<label for='nombres'>Nombres</label>
+<div class="section-private">
+    <h5 class="center-elements">Nuevo Usuario</h5>
+    <form method='post'>
+        <div class='row'>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>person</i>
+                <input id='nombres' type='text' name='nombres' class='validate' value='<?php print($nombres); ?>' required/>
+                <label for='nombres'>Nombres</label>
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>person</i>
+                <input id='apellidos' type='text' name='apellidos' class='validate' value='<?php print($apellidos); ?>' required/>
+                <label for='apellidos'>Apellidos</label>
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>redeem</i>
+                <input id='fecha_nacimiento' type='date' name='fecha_nacimiento' class='validate' value='<?php print($fecha_nacimiento); ?>' required/>
+        
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>call</i>
+                <input id='Telefono' type='number' name='Telefono' class='validate' value='<?php print($telefono); ?>' required/>
+                <label for='Telefono'>Telefono</label>
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>email</i>
+                <input id='correo' type='email' name='correo' class='validate' value='<?php print($correo); ?>' required/>
+                <label for='correo'>Correo</label>
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>person_pin</i>
+                <input id='usuario' type='text' name='usuario' class='validate' value='<?php print($usuario); ?>' required/>
+                <label for='usuario'>Usuario</label>
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>security</i>
+                <input id='clave1' type='password' name='clave1' class='validate' required/>
+                <label for='clave1'>Contraseña</label>
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>security</i>
+                <input id='clave2' type='password' name='clave2' class='validate' required/>
+                <label for='clave2'>Confirmar contraseña</label>
+            </div>
+            <div class='input-field col s12 m6 offset-m3'>
+                <?php
+                $sql = "SELECT id_tipo_usuario, nombre_tipo FROM tipo_usu";
+                $datoCombo = Page::setCombo("Tipo Usuario", "tipo_usuario", $tipo_usuario, $sql);
+            
+                ?>
+            </div>
         </div>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>person</i>
-            <input id='apellidos' type='text' name='apellidos' class='validate' value='<?php print($apellidos); ?>' required/>
-            <label for='apellidos'>Apellidos</label>
+        <div class='row center-align'>
+            <button type='submit' class='btn waves-effect'><i class='material-icons'>send</i></button>
         </div>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>person</i>
-            <input id='fecha_nacimiento' type='date' name='fecha_nacimiento' class='validate' value='<?php print($fecha_nacimiento); ?>' required/>
-       
-        </div>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>person</i>
-            <input id='Telefono' type='number' name='Telefono' class='validate' value='<?php print($telefono); ?>' required/>
-            <label for='Telefono'>Telefono</label>
-        </div>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>email</i>
-            <input id='correo' type='email' name='correo' class='validate' value='<?php print($correo); ?>' required/>
-            <label for='correo'>Correo</label>
-        </div>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>person_pin</i>
-            <input id='usuario' type='text' name='usuario' class='validate' value='<?php print($usuario); ?>' required/>
-            <label for='usuario'>Usuario</label>
-        </div>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>security</i>
-            <input id='clave1' type='password' name='clave1' class='validate' required/>
-            <label for='clave1'>Contraseña</label>
-        </div>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>security</i>
-            <input id='clave2' type='password' name='clave2' class='validate' required/>
-            <label for='clave2'>Confirmar contraseña</label>
-        </div>
-        <div class='input-field col s12 m6 offset-m3'>
-            <?php
-            $sql = "SELECT id_tipo_usuario, nombre_tipo FROM tipo_usu";
-            $datoCombo = Page::setCombo("Tipo Usuario", "tipo_usuario", $tipo_usuario, $sql);
-          
-            ?>
-        </div>
-    </div>
-    <div class='row center-align'>
- 	    <button type='submit' class='btn waves-effect'><i class='material-icons'>send</i></button>
-    </div>
-</form>
-
+    </form>
+</div>
  
         
         

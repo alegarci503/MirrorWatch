@@ -2,7 +2,7 @@
 <html lang='es'>
 <head>
 	<meta charset='utf-8'>
-	<title>CoffeeCode</title>
+	<title>MirrorWatch</title>
 	<link type='text/css' rel='stylesheet' href='../css/materialize.min.css'/>
 	<link type='text/css' rel='stylesheet' href='../css/icons.css'/>
 	<link type='text/css' rel='stylesheet' href='../css/miestilo.css'/>

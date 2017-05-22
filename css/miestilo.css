@@ -44,11 +44,15 @@ img.user{
 }
 
 .po{
-  background: url(../public/img/fondo.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 120px;
+  background: #263238;
+  margin-top: 50px;
 
+}
+.section-public{
+
+    padding: 30px;
+    background: white;
+    box-shadow: 5px 5px 10px black;
 }
 
  @media only screen and (max-width : 992px){
@@ -91,7 +95,7 @@ img.user{
 }
 .brain{
   
-    background: url(../img/bra.jpg);
+    background: url(../public/img/bra.jpg);
     background-size: 100% 100%; 
     background-repeat: no-repeat;
     

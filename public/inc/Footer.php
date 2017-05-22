@@ -7,13 +7,19 @@
                     <img src="img/pres.jpg">
                 </div>
                 <a href="#!user"><img class="circle" src="img/moto2.jpg"></a>
-                <a href="#!name"><span class="white-text name">Byron Solorzano</span></a>
-                <a href="#!email"><span class="white-text email">basfuentes25@gmail.com</span></a>
+                <a href="#!name"><span class="white-text name">
+                <?php
+                session_start();
+                  if(isset($_SESSION['usu']))
+                    {
+                    print($_SESSION['usu']);
+                    } 
+                ?></span></a>
                 </div></li>
-                <li><a href="CuentaUsuario.php"><i class="material-icons">cloud</i>Configuracion de cuenta</a></li>
+                <li><a href="session.php"><i class="material-icons">cloud</i>Configuracion de cuenta</a></li>
                 <li><div class="divider"></div></li>
                 <li><a class="subheader">Opciones</a></li>
-                <li><a class="waves-effect" href="Login.php">Cerrar Sesion</a></li>
+                <li><a class="waves-effect" href="logout.php">Cerrar Sesion</a></li>
             </ul>
 
           <div class="container">

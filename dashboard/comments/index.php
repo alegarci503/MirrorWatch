@@ -4,8 +4,8 @@ Page::header("MirrorWatch");
 ?>
 
 <div class="center-elements section-private">
-	<h5>Bienvenido a las Configuraciones</h5>
-	<img src="../img/rolex.jpg" class="img-index">
+	<h5>Comentarios (Aun no disponible)</h5>
+
 </div>
 <?php
 Page::footer();

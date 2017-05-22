@@ -52,25 +52,26 @@ if(!empty($_POST))
     }
 }
 ?>
-
-<form method='post'>
-	<div class='row'>
-		<div class='input-field col s12 m6 offset-m3'>
-			<i class='material-icons prefix'>person_pin</i>
-			<input id='usuario' type='text' name='usuario' class='validate' required/>
-	    	<label for='usuario'>Usuario</label>
+<div class="section-private">
+	<h5 class="center-elements">Iniciar Sesion</h5>
+	<form method='post'>
+		<div class='row'>
+			<div class='input-field col s12 m6 offset-m3'>
+				<i class='material-icons prefix'>person_pin</i>
+				<input id='usuario' type='text' name='usuario' class='validate' required/>
+				<label for='usuario'>Usuario</label>
+			</div>
+			<div class='input-field col s12 m6 offset-m3'>
+				<i class='material-icons prefix'>security</i>
+				<input id='password' type='password' name='password' class="validate" required/>
+				<label for='password'>Contraseña</label>
+			</div>
 		</div>
-		<div class='input-field col s12 m6 offset-m3'>
-			<i class='material-icons prefix'>security</i>
-			<input id='password' type='password' name='password' class="validate" required/>
-			<label for='password'>Contraseña</label>
+		<div class='row center-align'>
+			<button type='submit' class='btn waves-effect'><i class='material-icons'>send</i></button>
 		</div>
-	</div>
-	<div class='row center-align'>
-		<button type='submit' class='btn waves-effect'><i class='material-icons'>send</i></button>
-	</div>
-</form>
-
+	</form>
+</div>
 <?php
 Page::footer();
 ?>

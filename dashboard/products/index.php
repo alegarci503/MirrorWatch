@@ -18,6 +18,8 @@ if($data != null)
 {
 ?>
 
+<div class="section-private">
+<h5 class="center-elements">Productos Actuales</h5>
 <form method='post'>
 	<div class='row'>
 		<div class='input-field col s6 m4'>
@@ -33,6 +35,7 @@ if($data != null)
 		</div>
 	</div>
 </form>
+
 <table class='striped'>
 	<thead>
 		<tr>
@@ -81,6 +84,7 @@ if($data != null)
 	print("
 		</tbody>
 	</table>
+</div>
 	");
 } //Fin de if que comprueba la existencia de registros.
 else

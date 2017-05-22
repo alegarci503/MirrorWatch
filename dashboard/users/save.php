@@ -89,57 +89,57 @@ if(!empty($_POST))
     }
 }
 ?>
-
-<form method='post'>
-    <div class='row'>
-        <div class='input-field col s12 m6'>
-          	<i class='material-icons prefix'>person</i>
-          	<input id='nombres' type='text' name='nombres' class='validate' value='<?php print($nombres); ?>' required/>
-          	<label for='nombres'>Nombres</label>
+<div class="section-private">
+    <form method='post'>
+        <div class='row'>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>person</i>
+                <input id='nombres' type='text' name='nombres' class='validate' value='<?php print($nombres); ?>' required/>
+                <label for='nombres'>Nombres</label>
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>person</i>
+                <input id='apellidos' type='text' name='apellidos' class='validate' value='<?php print($apellidos); ?>' required/>
+                <label for='apellidos'>Apellidos</label>
+            </div>
         </div>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>person</i>
-            <input id='apellidos' type='text' name='apellidos' class='validate' value='<?php print($apellidos); ?>' required/>
-            <label for='apellidos'>Apellidos</label>
+        <div class='row'>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>email</i>
+                <input id='correo' type='email' name='correo' class='validate' value='<?php print($correo); ?>' required/>
+                <label for='correo'>Correo</label>
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>person_pin</i>
+                <input id='alias' type='text' name='alias' class='validate' <?php print("value='$alias' "); print(($id == null)?"required":"disabled"); ?>/>
+                <label for='alias'>Alias</label>
+            </div>
         </div>
-    </div>
-    <div class='row'>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>email</i>
-            <input id='correo' type='email' name='correo' class='validate' value='<?php print($correo); ?>' required/>
-            <label for='correo'>Correo</label>
+        <?php
+        if($id == null)
+        {
+        ?>
+        <div class='row'>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>security</i>
+                <input id='clave1' type='password' name='clave1' class='validate' required/>
+                <label for='clave1'>Contraseña</label>
+            </div>
+            <div class='input-field col s12 m6'>
+                <i class='material-icons prefix'>security</i>
+                <input id='clave2' type='password' name='clave2' class='validate' required/>
+                <label for='clave2'>Confirmar contraseña</label>
+            </div>
         </div>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>person_pin</i>
-            <input id='alias' type='text' name='alias' class='validate' <?php print("value='$alias' "); print(($id == null)?"required":"disabled"); ?>/>
-            <label for='alias'>Alias</label>
+        <?php
+        }
+        ?>
+        <div class='row center-align'>
+            <a href='index.php' class='btn waves-effect grey'><i class='material-icons'>cancel</i></a>
+            <button type='submit' class='btn waves-effect blue'><i class='material-icons'>save</i></button>
         </div>
-    </div>
-    <?php
-    if($id == null)
-    {
-    ?>
-    <div class='row'>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>security</i>
-            <input id='clave1' type='password' name='clave1' class='validate' required/>
-            <label for='clave1'>Contraseña</label>
-        </div>
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>security</i>
-            <input id='clave2' type='password' name='clave2' class='validate' required/>
-            <label for='clave2'>Confirmar contraseña</label>
-        </div>
-    </div>
-    <?php
-    }
-    ?>
-    <div class='row center-align'>
-        <a href='index.php' class='btn waves-effect grey'><i class='material-icons'>cancel</i></a>
-        <button type='submit' class='btn waves-effect blue'><i class='material-icons'>save</i></button>
-    </div>
-</form>
-
+    </form>
+</div>
 <?php
 Page::footer();
 ?>

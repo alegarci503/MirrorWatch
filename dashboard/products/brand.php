@@ -29,18 +29,19 @@ if(!empty($_POST))
 
 }
 ?>
-    <h2>Agregar nueva Marca</h2>
-<form method="post">
-     <div class='input-field col s12 m4 offset-m4'>
-          	<i class='material-icons prefix'>grade</i>
-          	<input id='marca' type='text' name='marca' class='validate' required/>
-          	<label for='marca'>Nueva Marca</label>
+<div class="section-private">
+    <h5 class="center-elements">Agregar nueva Marca</h5>
+    <form method="post">
+        <div class='input-field col s12 m4 offset-m4'>
+                <i class='material-icons prefix'>grade</i>
+                <input id='marca' type='text' name='marca' class='validate' required/>
+                <label for='marca'>Nueva Marca</label>
+            </div>
+        <div class='row center-align'>
+            <button type='submit' class='btn waves-effect blue'><i class='material-icons'>save</i></button>
         </div>
-    <div class='row center-align'>
-        <button type='submit' class='btn waves-effect blue'><i class='material-icons'>save</i></button>
-    </div>
-</form>
-
+    </form>
+</div>
 
 <?php
 Page::footer();
